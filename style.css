@@ -1,0 +1,205 @@
+/* Reset simples para margens e fontes básicas */
+* {
+    box-sizing: border-box; /* Faz o padding e border serem incluídos na largura total */
+    margin: 0; /* Remove margens padrão do navegador */
+    padding: 0; /* Remove padding padrão do navegador */
+  }
+  
+  /* Fonte base e cor de fundo do site */
+  body {
+    font-family: Arial, Helvetica, sans-serif; /* Fonte legível e comum */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+    color: #333; /* Cor do texto */
+    background-color: #fffaf6; /* Tom suave de fundo que remete a café */
+  }
+  
+  /* Container centralizador usado em várias seções */
+  .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 40px 0; /* Espaçamento vertical interno */
+  }
+  
+  /* Cabeçalho do site */
+  .site-header {
+    display: flex; /* Layout em linha para logo e navegação */
+    justify-content: space-between; /* Espaça logo e nav */
+    align-items: center; /* Alinha verticalmente */
+    padding: 20px 5%;
+    background-color: #3b2f2f; /* Cor escura que lembra torra de café */
+    color: #fff; /* Texto claro sobre fundo escuro */
+  }
+  
+  /* Logo: título e tagline */
+  .logo h1 {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+  .logo .tagline {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  /* Navegação principal */
+  .main-nav ul {
+    list-style: none; /* Remove marcadores da lista */
+    display: flex; /* Exibe itens em linha */
+    gap: 18px; /* Espaçamento entre links */
+  }
+  .main-nav a {
+    color: #fff; /* Links brancos no cabeçalho */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: 600;
+  }
+  .main-nav a:hover {
+    text-decoration: underline; /* Feedback visual ao passar o mouse */
+  }
+  
+  /* Seção hero (imagem grande com texto sobreposto) */
+  .hero {
+    position: relative; /* Permite posicionar o texto sobre a imagem */
+    overflow: hidden; /* Evita que elementos saiam do container */
+    min-height: 60vh; /* Altura mínima relativa à viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobre todo o espaço mantendo proporção */
+    filter: brightness(0.6); /* Escurece a imagem para destacar o texto */
+  }
+  .hero-text {
+    position: absolute; /* Sobrepõe o texto à imagem */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  .hero-text h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+  .hero-text p {
+    margin-bottom: 12px;
+  }
+  
+  /* Botão principal */
+  .btn {
+    display: inline-block;
+    background-color: #d2691e; /* Cor marrom/laranja que lembra café com leite */
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .btn:hover {
+    opacity: 0.9;
+  }
+  
+  /* Seção Sobre */
+  .about {
+    background-color: #fff; /* Fundo branco para contraste com hero */
+    color: #333;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas: imagem + texto */
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .about-grid img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  /* Cardápio */
+  .menu-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Layout responsivo */
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .menu-item {
+    background: #fff7f0; /* Tom suave para cartões */
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #f0e6e0;
+  }
+  .menu-item h4 {
+    margin-bottom: 6px;
+  }
+  .menu-item .price {
+    font-weight: 700;
+    color: #6b3e26; /* Cor que remete ao café */
+  }
+  
+  /* Galeria */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas maiores */
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  /* Rodapé */
+  .site-footer {
+    background-color: #2f2626;
+    color: #fff;
+    padding: 30px 0;
+  }
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .site-footer h4 {
+    margin-bottom: 8px;
+  }
+  .site-footer p {
+    margin-bottom: 6px;
+    opacity: 0.95;
+  }
+  .copyright {
+    text-align: center;
+    padding: 12px 0;
+    background-color: #241d1d;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsividade: adaptações para telas menores */
+  @media (max-width: 800px) {
+    .about-grid {
+      grid-template-columns: 1fr; /* Empilha imagem e texto em uma coluna */
+    }
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+    }
+    .footer-grid {
+      flex-direction: column; /* Empilha blocos do rodapé */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-nav ul {
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .hero-text h2 {
+      font-size: 1.4rem;
+    }
+    .gallery-grid img {
+      height: 140px;
+    }
+  }
+  
